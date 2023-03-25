@@ -10,10 +10,12 @@
             width: 1000px;
             background-color: grey;">
 
-<div *ngFor="let i of height">
+<div *ngFor="let x of height">
 
       <div style="display: flex;">
-        <mine-field *ngFor="let i of lenght"></mine-field>
+        <mine-field *ngFor="let y of lenght"
+                    [x]="x"
+                    [y]="y"></mine-field>
       </div>
 
 </div>

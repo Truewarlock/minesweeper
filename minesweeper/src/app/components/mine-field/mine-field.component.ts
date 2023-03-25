@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BoardStateService } from 'src/app/services/board-state.service';
 
 @Component({
   selector: 'mine-field',
@@ -7,18 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MineFieldComponent implements OnInit {
 
-  constructor() { }
+  @Input() x:number=0;
+  @Input() y:number=0;
+
+  constructor(public boardStateService: BoardStateService) {
+  }
 
   ngOnInit(): void {
+
   }
 
   unrevealed:boolean=true;
-  isBomb:boolean=false;
   revealState:boolean=false;
+  state:string="?"
 
   revealMine(){
     this.unrevealed=false;
-    if(this.isBomb)
+    if(this.boardStateService.boardState[this.x-1][this.y-1])
       this.revealState=true
   }
 

@@ -1,0 +1,18 @@
+
+.mine-field{
+  width:98px;
+  height:98px;
+  border: 1px solid black;
+}
+
+.unrevealed{
+  background-color: rgb(136, 181, 101);
+}
+
+.empty{
+  background-color: rgb(212, 216, 208);
+}
+
+.bomb{
+  background-color: rgb(235, 23, 23) ;
+}

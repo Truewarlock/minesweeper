@@ -1,0 +1,6 @@
+<div class="mine-field"
+     [ngClass]="{'unrevealed':unrevealed,
+                 'empty':false,
+                 'bomb': revealState}"
+     (click)="revealMine()">
+</div>

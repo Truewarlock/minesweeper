@@ -6,7 +6,7 @@ The app is made using the Angular framework and everything here was done from sc
 
 This project was meant as an example for my students and junior programers.
 
-![alt text](https://github.com/Truewarlock/minesweeper/blob/main/resources/cells.png)
+![alt text](https://github.com/Truewarlock/minesweeper/blob/main/resources/the%20game%20currently.png)
 
 # TODO list:
 

@@ -6,17 +6,23 @@ The app is made using the Angular framework and everything here was done from sc
 
 This project was meant as an example for my students and junior programers.
 
+![alt text](https://github.com/Truewarlock/minesweeper/blob/main/resources/cells.png)
+
 # TODO list:
 
 x add a way to randomly generate map states
 
 x generate the map only after you clicked the first square(so you prevent clicking on a bomb on the first click)
 
+x implement a reset button
+
 x implement a recurring method that is abble to reveal the neighbouring cells if they are empty and if the are not neighbouring cells wiht mombs
 
 x add multiple difficulties
 
 x improve GAME OVER screen
+
+x show the location of all bombs when you click one
 
 x implement YOU WON screen
 

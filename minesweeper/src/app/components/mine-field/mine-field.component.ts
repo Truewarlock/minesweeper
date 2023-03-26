@@ -34,9 +34,12 @@ export class MineFieldComponent implements OnInit {
 
   markedAsMine:boolean=false;
   markAsMine(event:any){
-    event.preventDefault()
-    console.log("Marked as mine:",this.x-1,this.y-1)
-    this.markedAsMine=!this.markedAsMine;
+    if(this.unrevealed){
+      event.preventDefault()
+      console.log("Marked as mine:",this.x-1,this.y-1)
+      this.markedAsMine=!this.markedAsMine;
+    }
+
   }
 
 }

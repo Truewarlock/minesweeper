@@ -27,8 +27,15 @@ export class MineFieldComponent implements OnInit {
     if(!this.markedAsMine){
       this.unrevealed=false;
       this.numberOfNeighbourBombs=this.boardStateService.calculateNeighbour(this.x-1,this.y-1)
-      if(this.boardStateService.boardState[this.x-1][this.y-1])
+      if(this.boardStateService.boardState[this.x-1][this.y-1]){
         this.revealState=true
+        setTimeout(()=>{
+          alert("GAME OVER")
+          window.location.reload()
+        },10)
+
+      }
+
     }
   }
 

@@ -21,9 +21,11 @@ export class MineFieldComponent implements OnInit {
   unrevealed:boolean=true;
   revealState:boolean=false;
   state:string="?"
+  numberOfNeighbourBombs:number=0;
 
   revealMine(){
     this.unrevealed=false;
+    this.numberOfNeighbourBombs=this.boardStateService.calculateNeighbour(this.x-1,this.y-1)
     if(this.boardStateService.boardState[this.x-1][this.y-1])
       this.revealState=true
   }

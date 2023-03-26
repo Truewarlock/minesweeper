@@ -3,6 +3,7 @@
   width:98px;
   height:98px;
   border: 1px solid black;
+
 }
 
 .unrevealed{
@@ -15,4 +16,11 @@
 
 .bomb{
   background-color: rgb(235, 23, 23) ;
+}
+
+.display-number{
+  font-family: fantasy;
+  margin-top: 16px;
+  font-size: 54px;
+  margin-left: 34px;
 }

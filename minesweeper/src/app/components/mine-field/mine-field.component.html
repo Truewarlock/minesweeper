@@ -2,8 +2,10 @@
      [ngClass]="{'unrevealed':unrevealed,
                  'empty':false,
                  'bomb': revealState}"
-     (click)="revealMine()">
-     <div *ngIf="!unrevealed && numberOfNeighbourBombs!=0"
+     (click)="revealMine()"
+     (contextmenu)="markAsMine($event)">
+
+     <div *ngIf="!unrevealed && numberOfNeighbourBombs!=0 && !markedAsMine && !revealState;"
           class="display-number"
           [ngClass]="{
                       'one':numberOfNeighbourBombs==1,
@@ -16,5 +18,15 @@
                       'eight':numberOfNeighbourBombs==9}">
       {{numberOfNeighbourBombs}}
      </div>
+     <div *ngIf="markedAsMine">
+      <img src="../../../assets/images/mine-mark.png" style="width:100px">
+     </div>
+     <div *ngIf="revealState">
+      <img src="../../../assets/images/bomb.png" style="width:100px">
+     </div>
+
+
+
+
 
 </div>

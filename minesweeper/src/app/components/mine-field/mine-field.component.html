@@ -3,8 +3,17 @@
                  'empty':false,
                  'bomb': revealState}"
      (click)="revealMine()">
-     <div *ngIf="!unrevealed"
-          class="display-number">
+     <div *ngIf="!unrevealed && numberOfNeighbourBombs!=0"
+          class="display-number"
+          [ngClass]="{
+                      'one':numberOfNeighbourBombs==1,
+                      'two':numberOfNeighbourBombs==2,
+                      'three':numberOfNeighbourBombs==3,
+                      'four':numberOfNeighbourBombs==4,
+                      'five':numberOfNeighbourBombs==5,
+                      'six':numberOfNeighbourBombs==6,
+                      'seven':numberOfNeighbourBombs==7,
+                      'eight':numberOfNeighbourBombs==9}">
       {{numberOfNeighbourBombs}}
      </div>
 

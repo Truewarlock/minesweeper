@@ -7,15 +7,15 @@
 }
 
 .unrevealed{
-  background-color: rgb(136, 181, 101);
+  background-color: #c1c0c1;
 }
 
 .empty{
-  background-color: rgb(212, 216, 208);
+  background-color: #b9b8b8;
 }
 
 .bomb{
-  background-color: rgb(235, 23, 23) ;
+  background-color: #fc0100 ;
 }
 
 .display-number{
@@ -23,4 +23,36 @@
   margin-top: 16px;
   font-size: 54px;
   margin-left: 34px;
+}
+
+.one{
+  color:#0100fd
+}
+
+.two{
+  color:#008102
+}
+
+.three{
+  color:#fe0101
+}
+
+.four{
+  color:#010086
+}
+
+.five{
+  color:#820101
+}
+
+.six{
+  color:#008286
+}
+
+.seven{
+  color:#820284
+}
+
+.eight{
+  color:#747574
 }

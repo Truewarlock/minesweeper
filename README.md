@@ -6,6 +6,20 @@ The app is made using the Angular framework and everything here was done from sc
 
 This project was meant as an example for my students and junior programers.
 
+# TODO list:
+
+-add a way to randomly generate map states
+-generate the map only after you clicked the first square(so you prevent clicking on a bomb on the first click)
+-implement a recurring method that is abble to reveal the neighbouring cells if they are empty and if the are not neighbouring cells wiht mombs
+-add multiple difficulties
+-improve GAME OVER screen
+-implement YOU WON screen
+
+
+# Logic
+
+The logic used here is not state of the art and it can use some refactoring. The state of the board is represented by a matrix inside a global service. The entire board is composed by a single cell component that is multiplied inside an ngFor. The state of that cell is handdled locally, curently.
+
 
 # License type: MIT
 

@@ -22,7 +22,7 @@ x add multiple difficulties
 
 x improve GAME OVER screen
 
-x show the location of all bombs when you click one
+V show the location of all bombs when you click one
 
 x implement YOU WON screen
 

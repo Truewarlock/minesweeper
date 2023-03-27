@@ -33,9 +33,7 @@ export class MineFieldComponent implements OnInit {
       if(this.boardStateService.boardState[this.x-1][this.y-1]){
         this.revealState=true
         this.boardStateService.gameOver()
-
       }
-
     }
   }
 

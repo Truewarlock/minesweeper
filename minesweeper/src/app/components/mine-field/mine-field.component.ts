@@ -15,7 +15,10 @@ export class MineFieldComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.boardStateService.revealAllBombs.subscribe(()=>{
+      if(this.revealState==false && this.boardStateService.boardState[this.x-1][this.y-1])
+        this.revealMine()
+    })
   }
 
   unrevealed:boolean=true;
@@ -29,10 +32,7 @@ export class MineFieldComponent implements OnInit {
       this.numberOfNeighbourBombs=this.boardStateService.calculateNeighbour(this.x-1,this.y-1)
       if(this.boardStateService.boardState[this.x-1][this.y-1]){
         this.revealState=true
-        setTimeout(()=>{
-          alert("GAME OVER")
-          window.location.reload()
-        },10)
+        this.boardStateService.gameOver()
 
       }
 

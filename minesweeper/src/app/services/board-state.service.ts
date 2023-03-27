@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +66,12 @@ export class BoardStateService {
     }
 
     return neighbourBombs;
+  }
+
+  revealAllBombs:EventEmitter<void>=new EventEmitter<void>;
+
+  gameOver(){
+    this.revealAllBombs.next()
   }
 
 /*

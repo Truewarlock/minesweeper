@@ -38,7 +38,7 @@ export class BoardStateService {
 
   ]
 
-  selectedDifficulty:any={name:"Easy",height:8,length:10}
+  selectedDifficulty:any={name:"Easy",height:8,length:10,numberOfBombs:10}
   difficulties:any=[
     {name:"Easy",height:8,length:10,numberOfBombs:10},
     {name:"Medium",height:14,length:18,numbersOfBombs:40},
@@ -46,13 +46,26 @@ export class BoardStateService {
   ]
 
   selectDifficulty(difficultyType:number=this.selectedDifficulty){
+    this.placedBombs=0
     this.selectedDifficulty=this.difficulties[difficultyType]
     const line=new Array(this.selectedDifficulty.length).fill(false);
     this.boardState=new Array(this.selectedDifficulty.height).fill(line);
     this.boardWasRevealed=new Array(this.selectedDifficulty.height).fill(line);
-
   }
 
+  placedBombs:number=0;
+  initMapWithBombs(){
+    const numberOfBombsNeeded=this.selectedDifficulty.numberOfBombs;
+    while(this.placedBombs<numberOfBombsNeeded){
+      let x=Math.floor(Math.random() * this.selectedDifficulty.height)
+      let y=Math.floor(Math.random() * this.selectedDifficulty.length)
+      if(this.boardState[x][y]===false){
+        this.boardState[x][y]=true;
+        this.placedBombs+=1;
+        console.log(x,y)
+      }
+    }
+  }
 
   calculateNeighbour(x: number, y: number): number {
     let neighbourBombs = 0;

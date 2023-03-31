@@ -26,43 +26,43 @@ export class BoardStateService {
     [false, false, false, false, false, false, false, false, false, false],
   ]
 
-  boardWasRevealed:any[]=[
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
+  boardWasRevealed: any[] = [
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
 
   ]
 
-  selectedDifficulty:any={id:0,name:"Easy",height:8,length:10,numberOfBombs:10}
-  difficulties:any=[
-    {id:0,name:"Easy",height:8,length:10,numberOfBombs:10},
-    {id:1,name:"Medium",height:14,length:18,numbersOfBombs:40},
-    {id:2,name:"Hard",height:20,length:24,numberOfBombs:99},
+  selectedDifficulty: any = { id: 0, name: "Easy", height: 8, length: 10, numberOfBombs: 10 }
+  difficulties: any = [
+    { id: 0, name: "Easy", height: 8, length: 10, numberOfBombs: 10 },
+    { id: 1, name: "Medium", height: 14, length: 18, numbersOfBombs: 40 },
+    { id: 2, name: "Hard", height: 20, length: 24, numberOfBombs: 99 },
   ]
 
-  selectDifficulty(difficultyType:number=this.selectedDifficulty.id){
-    this.placedBombs=0
-    this.selectedDifficulty=this.difficulties[difficultyType]
-    const line=new Array(this.selectedDifficulty.length).fill(false);
-    this.boardState=new Array(this.selectedDifficulty.height).fill(line);
-    this.boardWasRevealed=new Array(this.selectedDifficulty.height).fill(line);
+  selectDifficulty(difficultyType: number = this.selectedDifficulty.id) {
+    this.placedBombs = 0
+    this.selectedDifficulty = this.difficulties[difficultyType]
+    const line = new Array(this.selectedDifficulty.length).fill(false);
+    this.boardState = new Array(this.selectedDifficulty.height).fill(line);
+    this.boardWasRevealed = new Array(this.selectedDifficulty.height).fill(line);
   }
 
-  placedBombs:number=0;
-  initMapWithBombs(){
-    const numberOfBombsNeeded=this.selectedDifficulty.numberOfBombs;
-    while(this.placedBombs<numberOfBombsNeeded){
-      let x=Math.floor(Math.random() * this.selectedDifficulty.height)
-      let y=Math.floor(Math.random() * this.selectedDifficulty.length)
-      if(this.boardState[x][y]===false){
-        this.boardState[x][y]=true;
-        this.placedBombs+=1;
-        console.log(x,y)
+  placedBombs: number = 0;
+  initMapWithBombs() {
+    const numberOfBombsNeeded = this.selectedDifficulty.numberOfBombs;
+    while (this.placedBombs < numberOfBombsNeeded) {
+      let x = Math.floor(Math.random() * this.selectedDifficulty.height)
+      let y = Math.floor(Math.random() * this.selectedDifficulty.length)
+      if (this.boardState[x][y] === false) {
+        this.boardState[x][y] = true;
+        this.placedBombs += 1;
+        console.log(x, y)
       }
     }
   }
@@ -115,21 +115,6 @@ export class BoardStateService {
     return neighbourBombs;
   }
 
-  revealEmptyNeighbours(x:number,y:number){
-    this.revealEmptyCell.next([x+1,y+1])
-    this.revealEmptyCell.next([x-1,y-1])
-    this.revealEmptyCell.next([x+1,y-1])
-    this.revealEmptyCell.next([x-1,y+1])
-
-    this.revealEmptyCell.next([x,y+1])
-    this.revealEmptyCell.next([x,y-1])
-
-    this.revealEmptyCell.next([x+1,y])
-    this.revealEmptyCell.next([x-1,y])
-
-  }
-
-  revealEmptyCell: EventEmitter<[number,number]>=new EventEmitter<[number,number]>;
 
   revealAllBombs: EventEmitter<void> = new EventEmitter<void>;
 

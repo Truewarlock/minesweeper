@@ -15,13 +15,6 @@ export class MineFieldComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.boardStateService.revealEmptyCell.subscribe(([x,y])=>{
-      console.log(x,y);
-      if (!this.markedAsMine && this.boardStateService.calculateNeighbour(this.x, this.y)===0 && !this.boardStateService.boardState[this.x][this.y]) {
-        this.unrevealed = false;
-      }
-    })
-
     this.boardStateService.revealAllBombs.subscribe(() => {
       if (this.revealState == false && this.boardStateService.boardState[this.x][this.y])
         this.revealMine()
@@ -41,8 +34,6 @@ export class MineFieldComponent implements OnInit {
       if (this.boardStateService.boardState[this.x][this.y]) {
         this.revealState = true
         this.boardStateService.gameOver()
-      }else{
-        this.boardStateService.revealEmptyNeighbours(this.x,this.y);
       }
     }
   }

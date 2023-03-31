@@ -10,13 +10,13 @@ This project was meant as an example for my students and junior programers.
 
 # TODO list:
 
-x add a way to randomly generate map states
+A add a way to randomly generate map states
 
 x generate the map only after you clicked the first square(so you prevent clicking on a bomb on the first click)
 
 V implement a reset button
 
-A implement a recurring method that is abble to reveal the neighbouring cells if they are empty and if the are not neighbouring cells wiht mombs
+X implement a recurring method that is abble to reveal the neighbouring cells if they are empty and if the are not neighbouring cells wiht mombs
 
 V add multiple difficulties
 

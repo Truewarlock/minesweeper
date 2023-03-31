@@ -26,6 +26,18 @@ export class BoardStateService {
     [false, false, false, false, false, false, false, false, false, false],
   ]
 
+  boardWasRevealed:any[]=[
+    [false,false,false,false,false,false,false,false,false,false],
+    [false,false,false,false,false,false,false,false,false,false],
+    [false,false,false,false,false,false,false,false,false,false],
+    [false,false,false,false,false,false,false,false,false,false],
+    [false,false,false,false,false,false,false,false,false,false],
+    [false,false,false,false,false,false,false,false,false,false],
+    [false,false,false,false,false,false,false,false,false,false],
+    [false,false,false,false,false,false,false,false,false,false],
+
+  ]
+
 
   calculateNeighbour(x: number, y: number): number {
     let neighbourBombs = 0;
@@ -74,6 +86,13 @@ export class BoardStateService {
 
     return neighbourBombs;
   }
+
+  revealEmptyNeighbours(x:number,y:number){
+    this.revealEmptyCell.next([x+1,y+1])
+
+  }
+
+  revealEmptyCell: EventEmitter<[number,number]>=new EventEmitter<[number,number]>;
 
   revealAllBombs: EventEmitter<void> = new EventEmitter<void>;
 

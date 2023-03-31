@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardStateService } from 'src/app/services/board-state.service';
 
 @Component({
   selector: 'game-board',
@@ -7,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameBoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public boardState: BoardStateService) { }
 
   ngOnInit(): void {
   }
 
-  height:number[]=[1,2,3,4,5,6,7,8];
-  lenght:number[]=[1,2,3,4,5,6,7,8,9,10]
+
 
 
 }

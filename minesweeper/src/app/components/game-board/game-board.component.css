@@ -1,8 +1,8 @@
-.cell-line{
+.cell-line {
   display: flex;
 }
 
-.frame{
+.frame {
   display: flex;
   justify-content: center;
 }

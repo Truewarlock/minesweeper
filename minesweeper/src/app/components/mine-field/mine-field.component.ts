@@ -8,41 +8,41 @@ import { BoardStateService } from 'src/app/services/board-state.service';
 })
 export class MineFieldComponent implements OnInit {
 
-  @Input() x:number=0;
-  @Input() y:number=0;
+  @Input() x: number = 0;
+  @Input() y: number = 0;
 
   constructor(public boardStateService: BoardStateService) {
   }
 
   ngOnInit(): void {
-    this.boardStateService.revealAllBombs.subscribe(()=>{
-      if(this.revealState==false && this.boardStateService.boardState[this.x-1][this.y-1])
+    this.boardStateService.revealAllBombs.subscribe(() => {
+      if (this.revealState == false && this.boardStateService.boardState[this.x ][this.y ])
         this.revealMine()
     })
   }
 
-  unrevealed:boolean=true;
-  revealState:boolean=false;
+  unrevealed: boolean = true;
+  revealState: boolean = false;
 
-  numberOfNeighbourBombs:number=0;
+  numberOfNeighbourBombs: number = 0;
 
-  revealMine(){
-    if(!this.markedAsMine){
-      this.unrevealed=false;
-      this.numberOfNeighbourBombs=this.boardStateService.calculateNeighbour(this.x-1,this.y-1)
-      if(this.boardStateService.boardState[this.x-1][this.y-1]){
-        this.revealState=true
+  revealMine() {
+    if (!this.markedAsMine) {
+      this.unrevealed = false;
+      this.numberOfNeighbourBombs = this.boardStateService.calculateNeighbour(this.x , this.y )
+      if (this.boardStateService.boardState[this.x ][this.y ]) {
+        this.revealState = true
         this.boardStateService.gameOver()
       }
     }
   }
 
-  markedAsMine:boolean=false;
-  markAsMine(event:any){
-    if(this.unrevealed){
+  markedAsMine: boolean = false;
+  markAsMine(event: any) {
+    if (this.unrevealed) {
       event.preventDefault()
-      console.log("Marked as mine:",this.x-1,this.y-1)
-      this.markedAsMine=!this.markedAsMine;
+      console.log("Marked as mine:", this.x, this.y )
+      this.markedAsMine = !this.markedAsMine;
     }
 
   }

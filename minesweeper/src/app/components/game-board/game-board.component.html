@@ -7,9 +7,9 @@
 </div>
 <div class="frame">
   <div style="background-color: grey;">
-    <div *ngFor="let x of height">
+    <div *ngFor="let row of boardState.getBoardHeight();let x=index">
       <div class="cell-line">
-        <mine-field *ngFor="let y of lenght" [x]="x" [y]="y"></mine-field>
+        <mine-field *ngFor="let line of boardState.getBoardLength();let y=index" [x]="x" [y]="y"></mine-field>
       </div>
     </div>
   </div>

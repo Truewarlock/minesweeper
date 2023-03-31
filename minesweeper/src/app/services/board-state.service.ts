@@ -8,15 +8,22 @@ export class BoardStateService {
 
   constructor() { }
 
-  boardState:any[]=[
-    [false,false,true,false,false,false,false,false,false,false],
-    [false,true,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
-    [false,false,false,false,false,false,false,false,false,false],
+  getBoardHeight() {
+    return this.boardState
+  }
+  getBoardLength() {
+    return this.boardState[0]
+  }
+
+  boardState: any[] = [
+    [false, false, true, false, false, false, false, false, false, false],
+    [false, true, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
   ]
 
 
@@ -68,58 +75,9 @@ export class BoardStateService {
     return neighbourBombs;
   }
 
-  revealAllBombs:EventEmitter<void>=new EventEmitter<void>;
+  revealAllBombs: EventEmitter<void> = new EventEmitter<void>;
 
-  gameOver(){
+  gameOver() {
     this.revealAllBombs.next()
   }
-
-/*
-  calculateNeighbour(x:number,y:number){
-    let neighbourBombs:number=0;
-
-    if(x!=0){
-      if(y!=0){
-        if(this.boardState[x-1][y-1])
-          neighbourBombs+=1
-      }
-
-      if(this.boardState[x-1][y])
-        neighbourBombs+=1
-
-      if(this.boardState[x-1][y+1])
-        neighbourBombs+=1
-
-    }
-
-    if(y<=this.boardState[0].length){
-      if(x<=this.boardState.length){
-        if(this.boardState[x+1][y+1])
-          neighbourBombs+=1
-      }
-      if(this.boardState[x][y+1])
-        neighbourBombs+=1
-
-    }
-
-    if(x<=this.boardState.length){
-      if(y>0){
-        if(this.boardState[x+1][y-1]){
-          neighbourBombs+=1;
-        }
-      }
-
-      if(this.boardState[x+1][y]){
-        neighbourBombs+=1
-      }
-    }
-
-    if(y>0){
-      if(this.boardState[x][y-1]){
-        neighbourBombs+=1;
-      }
-    }
-
-    return neighbourBombs
-  }*/
 }

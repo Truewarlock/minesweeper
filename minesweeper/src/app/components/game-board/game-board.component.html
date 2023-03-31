@@ -1,15 +1,16 @@
 <div style="display:flex;
             gap:34px;
-            justify-content: center;
-            width:800px">
-  <div>Dificulty</div>
+            justify-content: center;">
+  <div>Dificulty:Medium</div>
   <div>Number of bombs: x</div>
   <div>Timer: x sec</div>
 </div>
-
-
-<div *ngFor="let x of height">
-  <div style="display: flex;">
-    <mine-field *ngFor="let y of lenght" [x]="x" [y]="y"></mine-field>
+<div class="frame">
+  <div style="background-color: grey;">
+    <div *ngFor="let x of height">
+      <div class="cell-line">
+        <mine-field *ngFor="let y of lenght" [x]="x" [y]="y"></mine-field>
+      </div>
+    </div>
   </div>
 </div>

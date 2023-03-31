@@ -1,0 +1,8 @@
+.cell-line{
+  display: flex;
+}
+
+.frame{
+  display: flex;
+  justify-content: center;
+}

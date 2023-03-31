@@ -14,11 +14,11 @@ x add a way to randomly generate map states
 
 x generate the map only after you clicked the first square(so you prevent clicking on a bomb on the first click)
 
-x implement a reset button
+V implement a reset button
 
-x implement a recurring method that is abble to reveal the neighbouring cells if they are empty and if the are not neighbouring cells wiht mombs
+A implement a recurring method that is abble to reveal the neighbouring cells if they are empty and if the are not neighbouring cells wiht mombs
 
-x add multiple difficulties
+V add multiple difficulties
 
 x improve GAME OVER screen
 

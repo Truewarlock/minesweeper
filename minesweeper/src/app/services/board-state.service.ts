@@ -38,6 +38,21 @@ export class BoardStateService {
 
   ]
 
+  selectedDifficulty:any={name:"Easy",height:8,length:10}
+  difficulties:any=[
+    {name:"Easy",height:8,length:10,numberOfBombs:10},
+    {name:"Medium",height:14,length:18,numbersOfBombs:40},
+    {name:"Hard",height:20,length:24,numberOfBombs:99},
+  ]
+
+  selectDifficulty(difficultyType:number=this.selectedDifficulty){
+    this.selectedDifficulty=this.difficulties[difficultyType]
+    const line=new Array(this.selectedDifficulty.length).fill(false);
+    this.boardState=new Array(this.selectedDifficulty.height).fill(line);
+    this.boardWasRevealed=new Array(this.selectedDifficulty.height).fill(line);
+
+  }
+
 
   calculateNeighbour(x: number, y: number): number {
     let neighbourBombs = 0;

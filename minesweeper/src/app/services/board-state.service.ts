@@ -38,14 +38,14 @@ export class BoardStateService {
 
   ]
 
-  selectedDifficulty:any={name:"Easy",height:8,length:10,numberOfBombs:10}
+  selectedDifficulty:any={id:0,name:"Easy",height:8,length:10,numberOfBombs:10}
   difficulties:any=[
-    {name:"Easy",height:8,length:10,numberOfBombs:10},
-    {name:"Medium",height:14,length:18,numbersOfBombs:40},
-    {name:"Hard",height:20,length:24,numberOfBombs:99},
+    {id:0,name:"Easy",height:8,length:10,numberOfBombs:10},
+    {id:1,name:"Medium",height:14,length:18,numbersOfBombs:40},
+    {id:2,name:"Hard",height:20,length:24,numberOfBombs:99},
   ]
 
-  selectDifficulty(difficultyType:number=this.selectedDifficulty){
+  selectDifficulty(difficultyType:number=this.selectedDifficulty.id){
     this.placedBombs=0
     this.selectedDifficulty=this.difficulties[difficultyType]
     const line=new Array(this.selectedDifficulty.length).fill(false);
@@ -117,6 +117,15 @@ export class BoardStateService {
 
   revealEmptyNeighbours(x:number,y:number){
     this.revealEmptyCell.next([x+1,y+1])
+    this.revealEmptyCell.next([x-1,y-1])
+    this.revealEmptyCell.next([x+1,y-1])
+    this.revealEmptyCell.next([x-1,y+1])
+
+    this.revealEmptyCell.next([x,y+1])
+    this.revealEmptyCell.next([x,y-1])
+
+    this.revealEmptyCell.next([x+1,y])
+    this.revealEmptyCell.next([x-1,y])
 
   }
 

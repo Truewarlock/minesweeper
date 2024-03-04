@@ -4,7 +4,7 @@ This is my take on the classic Minesweeper game that I never understood as a chi
 
 The app is made using the Angular framework and everything here was done from scratch by me (even the icons, no Chat GPT or stackoverflow help). 
 
-This project was meant as an example for my students and junior programers.
+This project was meant as an example for my students and junior programers. Angular is far away from the best thing to build a game on, I don't endorse it, but it was for educational purposes.
 
 ![alt text](https://github.com/Truewarlock/minesweeper/blob/main/resources/the%20game%20currently.png)
 

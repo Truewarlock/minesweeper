@@ -1,10 +1,12 @@
 # Introduction
 
-This is my take on the classic Minesweeper game that I never understood as a child, but that I grew to like as an adult. 
+Welcome to Minesweeper Remastered, my personal interpretation of the classic game that I never understood as a kid but grew to like as an adult.
 
-The app is made using the Angular framework and everything here was done from scratch by me (even the icons, no Chat GPT or stackoverflow help). 
+Built entirely from the ground up using the Angular framework, this app represents a labor of love, with every element, including the meticulously crafted icons (I'm not an artist). No Chat GPT or Stack Overflow assistance was sought during its creation.
 
-This project was meant as an example for my students and junior programers. Angular is far away from the best thing to build a game on, I don't endorse it, but it was for educational purposes.
+Originally conceived as a demonstration for my students and aspiring junior programmers participating in my Angular course, this project serves as an educational journey. While Angular may not be the optimal choice for game development, its application in this context provides valuable insights and practical lessons for those navigating the intricacies of web development. I don't necessarily endorse Angular for game development, but the decision was made deliberately to facilitate a learning experience.
+
+
 
 ![alt text](https://github.com/Truewarlock/minesweeper/blob/main/resources/the%20game%20currently.png)
 

@@ -1,4 +1,4 @@
-# Introduction
+# Introduction -  Minesweeper Remastered
 
 Welcome to Minesweeper Remastered, my personal interpretation of the classic game that I never understood as a kid but grew to like as an adult.
 
